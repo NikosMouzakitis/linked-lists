@@ -25,7 +25,7 @@ struct node * buildOneTwoThree()
 
         third->data = 3;
         third->next = NULL;
-
+        printf("List is of lenght : %d \n",Length(head));
 
         return head;
 }
@@ -36,6 +36,8 @@ int main(void)
         struct node *ptr;
         ptr = buildOneTwoThree();
 
+
+        printf("Printing elements: ");
         while(ptr->next != NULL)
         {
                 printf("%d ",ptr->data);
@@ -46,4 +48,16 @@ int main(void)
 
         return 0;
 }
+
+int Length(struct node* head)
+{
+        struct node* current = head;
+        int count = 0;
+        while (current != NULL) {
+                count++;
+                current = current->next;
+                }
+        return count;
+}
+
 
